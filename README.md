@@ -53,10 +53,10 @@ logistics-ai-assistant/
 │   ├── app/
 │   │   ├── main.py            # FastAPI app entry
 │   │   ├── database.py        # DB connection
-│   │   ├── models/            # SQLAlchemy models
+│   │   ├── config.py            
 │   │   ├── schemas/           # Pydantic schemas
 │   │   ├── routers/           # API endpoints
-│   │   ├── services/          # Business logic
+│   │   ├── models/            # SQLAlchemy models
 │   │   ├── ai/                # LangChain AI integration
 │   │   └── utils/             # Helper functions
 │   ├── tests/                 # pytest tests
@@ -67,15 +67,14 @@ logistics-ai-assistant/
 │   ├── src/
 │   │   ├── components/        # React components
 │   │   ├── pages/             # Page components
-│   │   ├── services/          # API calls
-│   │   ├── hooks/             # Custom hooks
+│   │   ├── contexts/          
 │   │   ├── types/             # TypeScript types
 │   │   └── App.tsx            # Main app
 │   ├── package.json
 │   └── Dockerfile
 │
 ├── docker-compose.yml         # Multi-container setup
-├── .github/workflows/         # CI/CD pipeline
+├── .env.example        
 └── README.md
 ```
 
