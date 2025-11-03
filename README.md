@@ -61,16 +61,22 @@ logistics-ai-assistant/
 │   │   └── utils/             # Helper functions
 │   ├── tests/                 # pytest tests
 │   ├── requirements.txt
+|   |── dockerignore
 │   └── Dockerfile
 │
 ├── frontend/                   # React frontend
+|   |── public/
+|   |   |── index.html
 │   ├── src/
 │   │   ├── components/        # React components
 │   │   ├── pages/             # Page components
 │   │   ├── contexts/          
-│   │   ├── types/             # TypeScript types
+│   │   ├── index.css
+|   |   |── index.tsx             
 │   │   └── App.tsx            # Main app
 │   ├── package.json
+|   |── package-lock.json
+|   |── tailwind.config.js
 │   └── Dockerfile
 │
 ├── docker-compose.yml         # Multi-container setup
@@ -92,7 +98,7 @@ logistics-ai-assistant/
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/logistics-ai-assistant.git
+git clone https://github.com/NatalieCheong/logistics-ai-assistant.git
 cd logistics-ai-assistant
 
 # Create .env file
@@ -120,7 +126,13 @@ python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-# Run migrations
+# Initialize Alembic (if not already done)
+alembic init alembic
+
+# Create initial migration
+alembic revision --autogenerate -m "Initial migration"
+
+# Apply migrations to create database tables
 alembic upgrade head
 
 # Start server
@@ -272,23 +284,6 @@ Interactive Swagger UI with all endpoints:
 
 ---
 
-## 🎯 How This Meets Job Requirements
-
-| Job Requirement | How This Project Demonstrates It |
-|----------------|-----------------------------------|
-| **Strong Python backend** | FastAPI with clean architecture, SQLAlchemy ORM, async/await |
-| **OpenAI integration** | GPT-4 API calls, embeddings, function calling |
-| **LangChain experience** | Custom agents, tools with @tool decorator, RAG system |
-| **REST APIs** | Complete RESTful API with CRUD, filtering, pagination |
-| **React or Vue** | React 18 with TypeScript, hooks, modern patterns |
-| **JavaScript proficiency** | TypeScript throughout frontend |
-| **Agile/Scrum** | User stories, sprint planning in project management |
-| **CI/CD pipelines** | GitHub Actions for automated testing and deployment |
-| **Docker/Kubernetes** | Full Docker setup with docker-compose |
-| **Problem solving** | Complex AI integration, error handling, optimization |
-
----
-
 ## 🚢 Deployment
 
 ### Option 1: Docker Deployment (Any Cloud Provider)
@@ -323,20 +318,6 @@ kubectl apply -f k8s/
 1. **Customize it:** Add features relevant to logistics (route optimization, real-time tracking)
 2. **Add your touch:** Implement additional AI features, better UI/UX
 3. **Deploy live:** Put it on a real domain so employers can access it
-4. **Write about it:** Blog post explaining your architecture decisions
-5. **Present it:** Use this in interviews to demonstrate your skills
-
----
-
-## 📝 Resume Bullet Points
-
-Use these when describing this project:
-
-- "Built full-stack logistics platform using FastAPI, React, and PostgreSQL with 95% test coverage"
-- "Integrated OpenAI GPT-4 and LangChain to create AI assistant with RAG for document search"
-- "Implemented JWT authentication and role-based access control for secure API"
-- "Containerized application with Docker and automated deployment with CI/CD pipeline"
-- "Designed and developed RESTful API serving 1000+ requests with <100ms response time"
 
 ---
 
@@ -355,22 +336,6 @@ MIT License - Use freely for your portfolio and learning
 
 ---
 
-## 💡 Interview Talking Points
-
-When discussing this project in interviews:
-
-1. **Architecture Decision:** "I chose FastAPI over Flask because of native async support needed for LLM API calls"
-
-2. **AI Integration:** "I implemented RAG using ChromaDB and OpenAI embeddings to ground the AI responses in actual logistics documentation"
-
-3. **Scalability:** "The API uses connection pooling and implements caching to handle high traffic"
-
-4. **Testing:** "I maintained 80%+ code coverage with unit tests, integration tests, and E2E tests"
-
-5. **DevOps:** "I set up a complete CI/CD pipeline that runs tests, builds containers, and deploys automatically on merge to main"
-
----
-
-**Built by:** [Your Name]
-**Date:** November 2025
+**Built by:** Natalie Cheong
+**Date:** November 03 2025
 **Purpose:** Full-Stack Developer Portfolio Project
