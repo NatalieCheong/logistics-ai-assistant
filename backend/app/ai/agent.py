@@ -4,7 +4,7 @@ LangChain AI Agent for Logistics Assistant
 This demonstrates OpenAI API + LangChain integration with custom tools
 """
 
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.memory import ConversationBufferMemory

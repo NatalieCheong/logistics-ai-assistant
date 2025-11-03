@@ -1,0 +1,47 @@
+# Python
+venv/
+.env
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+*.log
+
+# Databases
+*.sqlite3
+*.db
+backend/logistics.db
+
+# Alembic (exclude migrations + ini)
+backend/alembic/
+backend/alembic.ini
+
+# Chroma vector store
+chroma_db/
+backend/chroma_db/
+
+# Node / React
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / Editor
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Coverage / caches
+coverage/
+.cache/
+
+

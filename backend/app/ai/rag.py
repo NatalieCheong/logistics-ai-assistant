@@ -4,11 +4,10 @@ RAG (Retrieval Augmented Generation) System
 This allows the AI to search through logistics documentation and policies
 """
 
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import Chroma
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.document_loaders import PyPDFLoader, TextLoader, DirectoryLoader
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+from langchain_community.vectorstores import Chroma
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import PyPDFLoader, TextLoader, DirectoryLoader
 from langchain.chains import RetrievalQA
 from pathlib import Path
 from typing import List, Dict, Any
@@ -219,7 +218,7 @@ Common causes:
     
     def _get_sample_documents(self) -> List:
         """Get sample documents if loading fails"""
-        from langchain.schema import Document
+        from langchain_core.documents import Document
         
         return [
             Document(
@@ -312,7 +311,7 @@ Common causes:
             metadatas: Optional metadata for each document
         """
         try:
-            from langchain.schema import Document
+            from langchain_core.documents import Document
             
             documents = [
                 Document(page_content=text, metadata=meta or {})

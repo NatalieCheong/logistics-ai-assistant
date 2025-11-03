@@ -3,11 +3,10 @@
 Pydantic schemas for User/Authentication endpoints
 """
 
-from pydantic import BaseModel, EmailStr, Field
 from datetime import datetime
 from typing import Optional
 from app.models.user import UserRole
-
+from pydantic import BaseModel, EmailStr, Field, validator
 
 class UserBase(BaseModel):
     """Base user schema"""

@@ -1,13 +1,13 @@
 // frontend/src/App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import ShipmentDetail from './pages/ShipmentDetail';
-import AIChat from './pages/AIChat';
-import Navigation from './components/Navigation';
+import { AuthProvider, useAuth } from './contexts/AuthContext.tsx';
+import Login from './pages/Login.tsx';
+import Register from './pages/Register.tsx';
+import Dashboard from './pages/Dashboard.tsx';
+import ShipmentDetail from './pages/ShipmentDetail.tsx';
+import AIChat from './pages/AIChat.tsx';
+import Navigation from './components/Navigation.tsx';
 
 // Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {

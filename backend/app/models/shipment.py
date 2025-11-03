@@ -50,21 +50,21 @@ class Shipment(Base):
        index=True
     )
 
-    # Timestamps
-    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
-    stimated_delivery = Column(DateTime, nullable=True)
-    actual_delivery = Column(DateTime, nullable=True)
+   # Timestamps
+   created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+   updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+   stimated_delivery = Column(DateTime, nullable=True)
+   actual_delivery = Column(DateTime, nullable=True)
 
-    # Foreign keys
-    warehouse_id = Column(Integer, ForeignKey("warehouses.id"), nullable=True)
-    driver_id = Column(Integer, ForeignKey("drivers.id"), nullable=True)
-    customer_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+   # Foreign keys
+   warehouse_id = Column(Integer, ForeignKey("warehouses.id"), nullable=True)
+   driver_id = Column(Integer, ForeignKey("drivers.id"), nullable=True)
+   customer_id = Column(Integer, ForeignKey("users.id"), nullable=False)
 
-    # Relationships
-    warehouse = relationship("Warehouse", back_populates="shipments")
-    driver = relationship("Driver", back_populates="shipments")
-    customer = relationship("User", back_populates="shipments")
+   # Relationships
+   warehouse = relationship("Warehouse", back_populates="shipments")
+   driver = relationship("Driver", back_populates="shipments")
+   customer = relationship("User", back_populates="shipments")
 
-    def __repr__(self):
-        return f"<Shipment {self.tracking_number} - {self.status}>"
+   def __repr__(self):
+      return f"<Shipment {self.tracking_number} - {self.status}>"
