@@ -50,10 +50,11 @@ async def create_shipment(
         )
     
     # Create new shipment
+    shipment_data = shipment.dict()
+    shipment_data['tracking_number'] = shipment_data['tracking_number'].upper()
     db_shipment = Shipment(
-        **shipment.dict(),
-        customer_id=current_user.id,
-        tracking_number=shipment.tracking_number.upper()
+        **shipment_data,
+        customer_id=current_user.id
     )
     
     db.add(db_shipment)
