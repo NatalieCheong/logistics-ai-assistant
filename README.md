@@ -1,8 +1,8 @@
-# Logistics AI Assistant - Full-Stack Project
+# Logistics AI Assistant - A Simple Full-Stack Project
 
 ## 🎯 Project Overview
 
-A complete logistics management system with AI-powered assistant that demonstrates all required skills for the Full-Stack Developer role.
+This project are run everything locally without Docker, use SqlLite instead of PostgreSQL and this is a complete logistics management system with AI-powered assistant that demonstrates all required skills for the Full-Stack Developer role.
 
 **Live Demo Features:**
 - ✅ Track shipments in real-time
