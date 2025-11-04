@@ -1,4 +1,4 @@
-# Logistics AI Assistant - A Simple Full-Stack Project
+# Logistics AI Assistant - Full-Stack Project
 
 ## 🎯 Project Overview
 
